@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
@@ -8,7 +8,22 @@ function App() {
 
 	// const firstName: string;
 	// const firstName: Array<number> = [1, 2, 123];
-	const firstName: [string, number] = ['1,2', 3, 3];
+	// const aTuple: [string, number] = ['1', 3];
+
+	enum Codes {
+		first = 1,
+		second,
+		third,
+	}
+
+	const arr: (string | number | undefined)[] = [1, 2, 3, , 4];
+	const func = (): void => {
+		console.log('Warning');
+		return;
+	};
+	useEffect(func);
+
+	let name: any = 'manny';
 
 	return (
 		<div className="App">
@@ -27,7 +42,7 @@ function App() {
 				</button>
 			</div>
 			<p style={{ backgroundColor: 'red' }}>
-				That value {firstName} is {typeof firstName} type!
+				That value {name} is {typeof name} type!
 			</p>
 		</div>
 	);
