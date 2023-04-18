@@ -12,7 +12,9 @@ const initialState = {
 
 type State = Readonly<typeof initialState>;
 
-class App extends Component<any> {
+class App extends Component<any, State> {
+	readonly state = initialState;
+
 	render() {
 		return (
 			<div className="App">
@@ -30,7 +32,7 @@ class App extends Component<any> {
 						count is {count}
 					</button> */}
 				</div>
-				<Message name="Manny" message="This is a simple message" />
+				<Message name={this.state.name} message={this.state.message} />
 			</div>
 		);
 	}
