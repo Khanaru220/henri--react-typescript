@@ -1,18 +1,11 @@
-interface UserMessage {
-	name: string;
-	message: string;
-}
+import messageHoc from './Hoc';
 
-let mySearch = function (k: string, r: number): boolean {
-	return true;
-};
+const example = (props: any): any => (
+	<p>
+		{props.name} ++++ {props.message}
+	</p>
+);
 
-mySearch('a', 's');
+const Message = messageHoc(example);
 
-export default function Message(props: UserMessage) {
-	return (
-		<p>
-			{props.name}, {props.message}
-		</p>
-	);
-}
+export default Message;

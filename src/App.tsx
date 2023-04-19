@@ -5,16 +5,7 @@ import './App.css';
 
 import Message from './Message';
 
-const initialState = {
-	name: 'Manny',
-	message: 'TypeScript is cool!!',
-};
-
-type State = Readonly<typeof initialState>;
-
-class App extends Component<any, State> {
-	readonly state = initialState;
-
+class App extends Component {
 	render() {
 		return (
 			<div className="App">
@@ -32,7 +23,7 @@ class App extends Component<any, State> {
 						count is {count}
 					</button> */}
 				</div>
-				<Message name={this.state.name} message={this.state.message} />
+				<Message />
 			</div>
 		);
 	}
